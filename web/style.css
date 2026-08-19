@@ -1,0 +1,581 @@
+/* =========================================================
+   SYNAP AI — FINAL FRONTEND STYLE
+   ========================================================= */
+
+:root {
+    --bg: #0b0d10;
+    --surface: #11151a;
+    --surface-2: #181d23;
+    --surface-3: #20262d;
+
+    --text: #f5f7fa;
+    --muted: #8d98a5;
+
+    --border: #29313a;
+
+    --accent: #6c7cff;
+    --accent-hover: #8290ff;
+
+    --user-message: #29313b;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+    height: 100vh;
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--bg);
+    color: var(--text);
+
+    overflow: hidden;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.top-bar {
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 0 20px;
+
+    background: var(--surface);
+
+    border-bottom: 1px solid var(--border);
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* MENU */
+
+#menuButton {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+#menuButton:hover {
+    background: var(--surface-3);
+}
+
+
+/* TITLE */
+
+.top-bar h1 {
+    font-size: 21px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+#sidebar {
+    position: fixed;
+
+    left: 0;
+    top: 64px;
+
+    width: 270px;
+
+    height: calc(100vh - 64px);
+
+    padding: 20px 16px;
+
+    background: var(--surface);
+
+    border-right: 1px solid var(--border);
+
+    overflow-y: auto;
+
+    z-index: 5;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* SIDEBAR BUTTONS */
+
+#sidebar button {
+    width: 100%;
+
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 15px;
+
+    margin-bottom: 9px;
+
+    border: 1px solid transparent;
+
+    border-radius: 11px;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* HOVER */
+
+#sidebar button:hover {
+    background: var(--surface-3);
+
+    border-color: var(--border);
+
+    transform: translateX(2px);
+}
+
+
+/* NEW CHAT */
+
+#newChatButton {
+    background: var(--accent) !important;
+
+    color: white !important;
+
+    font-weight: 600;
+
+    margin-bottom: 20px !important;
+}
+
+#newChatButton:hover {
+    background: var(--accent-hover) !important;
+}
+
+
+/* =========================================================
+   MAIN CHAT
+   ========================================================= */
+
+#chatArea {
+    margin-left: 270px;
+
+    height: calc(100vh - 64px);
+
+    display: flex;
+    flex-direction: column;
+
+    transition: margin-left 0.3s ease;
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+#messages {
+    flex: 1;
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 40px 25px;
+
+    overflow-y: auto;
+
+    scroll-behavior: smooth;
+}
+
+
+/* SCROLLBAR */
+
+#messages::-webkit-scrollbar,
+#sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+#messages::-webkit-scrollbar-thumb,
+#sidebar::-webkit-scrollbar-thumb {
+    background: #343c45;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   WELCOME
+   ========================================================= */
+
+.welcome {
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px;
+}
+
+
+/* LOGO / TITLE */
+
+.welcome h2 {
+    font-size: 34px;
+
+    margin-bottom: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* DESCRIPTION */
+
+.welcome p {
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   INPUT AREA
+   ========================================================= */
+
+.input-area {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    gap: 10px;
+
+    padding: 16px 25px 22px;
+}
+
+
+/* INPUT */
+
+#messageInput {
+    flex: 1;
+
+    height: 52px;
+
+    padding: 0 17px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    outline: none;
+
+    background: var(--surface-2);
+
+    color: var(--text);
+
+    font-size: 15px;
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#messageInput::placeholder {
+    color: var(--muted);
+}
+
+#messageInput:focus {
+    border-color: var(--accent);
+
+    box-shadow:
+        0 0 0 3px rgba(108, 124, 255, 0.12);
+}
+
+
+/* SEND */
+
+#sendButton {
+    height: 52px;
+
+    padding: 0 20px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: var(--accent);
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+#sendButton:hover {
+    background: var(--accent-hover);
+
+    transform: translateY(-1px);
+}
+
+#sendButton:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
+body.light-theme {
+
+    --bg: #f5f7fa;
+
+    --surface: #ffffff;
+
+    --surface-2: #f0f2f5;
+
+    --surface-3: #e5e8ed;
+
+    --text: #15181c;
+
+    --muted: #68717c;
+
+    --border: #d8dde3;
+
+    --user-message: #e2e6eb;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .top-bar {
+        height: 58px;
+
+        padding: 0 14px;
+    }
+
+    #sidebar {
+        top: 58px;
+
+        width: 250px;
+
+        height: calc(100vh - 58px);
+    }
+
+    #chatArea {
+        margin-left: 0;
+
+        height: calc(100vh - 58px);
+    }
+
+    #messages {
+        padding: 25px 15px;
+    }
+
+    .welcome h2 {
+        font-size: 27px;
+    }
+
+    .input-area {
+        padding: 10px 12px 14px;
+    }
+
+    #messageInput {
+        height: 48px;
+
+        font-size: 14px;
+    }
+
+    #sendButton {
+        height: 48px;
+
+        padding: 0 15px;
+    }
+}
+
+/* =========================================================
+   SYNAP CHAT AREA
+   ========================================================= */
+
+#messages {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 15px;
+
+    overflow-y: auto;
+
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   USER MESSAGE — RIGHT
+   ========================================================= */
+
+.synap-user-message {
+    align-self: flex-end;
+
+    margin-left: auto;
+    margin-right: 0;
+
+    max-width: 70%;
+
+    padding: 10px 16px;
+
+    background: #2b5278;
+    color: #ffffff;
+
+    border-radius: 15px 15px 2px 15px;
+
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
+
+/* =========================================================
+   AI MESSAGE — LEFT
+   ========================================================= */
+
+.synap-ai-message {
+    align-self: flex-start;
+
+    margin-left: 0;
+    margin-right: auto;
+
+    max-width: 70%;
+
+    padding: 10px 16px;
+
+    background: #1e1e1e;
+    color: #e0e0e0;
+
+    border-radius: 15px 15px 15px 2px;
+
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
+.light-theme .synap-ai-message {
+    background: #eeeeee;
+    color: #111111;
+}
+
+.light-theme .synap-user-message {
+    background: #2b5278;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   CHAT HISTORY
+   ========================================================= */
+
+.chat-history-item {
+    padding: 14px 16px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid var(--border, #333);
+
+    border-radius: 12px;
+
+    background: var(--surface-2, #1e1e1e);
+
+    color: var(--text, #ffffff);
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.chat-history-item:hover {
+    transform: translateX(3px);
+}

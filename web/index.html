@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SYNAP AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <header class="top-bar">
+        <button id="menuButton">☰</button>
+        <h1>SYNAP AI</h1>
+    </header>
+
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar">
+
+        <button id="newChatButton">
+            + New Chat
+        </button>
+
+        <button id="recentButton">
+            🕘 Recent Chats
+        </button>
+
+        <button id="historyButton">
+            💬 Chat History
+        </button>
+
+        <button id="themeButton">
+            🎨 Themes
+        </button>
+
+        <button id="settingsButton">
+            ⚙ Settings
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN CHAT -->
+    <main id="chatArea">
+
+        <div id="messages">
+            <div class="welcome">
+                <h2>Welcome to SYNAP</h2>
+                <p>Your AI workspace.</p>
+            </div>
+        </div>
+
+
+        <!-- MESSAGE INPUT -->
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Message SYNAP..."
+            >
+
+            <button id="sendButton">
+                Send
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
