@@ -29,7 +29,7 @@ api_key = os.getenv("GROQ_API_KEY")
 if not api_key:
 
     raise RuntimeError(
-        "GROQ_API_KEY haijapatikana kwenye .env"
+        "GROQ_API_KEY haijapatikana kwenye environment variables."
     )
 
 
@@ -39,7 +39,7 @@ if not api_key:
 
 MODEL_NAME = os.getenv(
     "GROQ_MODEL",
-    "llama-3.3-70b-versatile"
+    "openai/gpt-oss-120b"
 )
 
 
@@ -299,13 +299,24 @@ use practical examples when useful.
 
 if __name__ == "__main__":
 
+    port = int(
+        os.environ.get(
+            "PORT",
+            5000
+        )
+    )
+
+
     print()
+
     print(
         "======================================"
     )
+
     print(
         "        SYNAP AI BACKEND"
     )
+
     print(
         "======================================"
     )
@@ -315,7 +326,7 @@ if __name__ == "__main__":
     )
 
     print(
-        "Server: http://127.0.0.1:5000"
+        f"Port: {port}"
     )
 
     print(
@@ -329,11 +340,12 @@ if __name__ == "__main__":
     print()
 
 
-    if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-
     app.run(
+
         host="0.0.0.0",
+
         port=port,
+
         debug=False
+
     )
